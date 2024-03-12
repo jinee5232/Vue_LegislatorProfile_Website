@@ -64,7 +64,7 @@ export default {
     scrollToSection(sectionId) {
       const section = document.getElementById(sectionId);
       if (section) {
-        const offset = 200;
+        const offset = 100;
         window.scrollTo({
           top: section.offsetTop - offset,
           behavior: "smooth",
