@@ -3,7 +3,7 @@
   <div class="header" :class="[scrollPosition >= 120 ? 'shrink' : 'isTop']">
     <div class="wrap">
       <div class="logo">
-        <router-link to="/"
+        <router-link to="/Vue_LegislatorProfile_Website/"
           ><img class="header-logo" src="../assets/images/logo.png" alt=""
         /></router-link>
       </div>
