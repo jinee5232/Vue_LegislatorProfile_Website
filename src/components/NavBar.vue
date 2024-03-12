@@ -10,7 +10,7 @@
       <nav>
         <ul class="menu">
           <li>
-            <router-link to="/">首頁</router-link>
+            <router-link to="/Vue_LegislatorProfile_Website/">首頁</router-link>
           </li>
           <li @click="scrollToSection('About')"><a>關於薩卡</a></li>
           <li @click="scrollToSection('Activy')"><a>政治議題</a></li>
