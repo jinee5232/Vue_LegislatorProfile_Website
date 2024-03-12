@@ -7,8 +7,8 @@
 
       <div class="footer-a">
         <div class="section-b">
-          <a href="./03_activity.html">最新活動</a>
-          <a href="./04_policy.html">議題政策</a>
+          <a>最新活動</a>
+          <a>議題政策</a>
           <br />
           <a href="#">民眾服務</a>
           <a href="#">小額捐款</a>
