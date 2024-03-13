@@ -4,7 +4,12 @@
     <div class="wrap">
       <div class="logo">
         <router-link to="/Vue_LegislatorProfile_Website/">
-          <img class="header-logo" src="../assets/images/logo.png" alt="" />
+          <img
+            class="meow-logo"
+            src="../assets/images/logo.png"
+            alt=""
+            :class="[scrollPosition >= 120 ? 'header-logo' : 'logoHigh']"
+          />
         </router-link>
       </div>
       <nav>
@@ -98,6 +103,7 @@ export default {
 body a,
 footer .goTop svg,
 .header,
+.meow-logo,
 .header .wrap {
   transition: all 0.5s ease-out;
 }
@@ -174,6 +180,7 @@ header nav {
   font-size: 32px;
   height: 50px;
   font-weight: 600;
+  cursor: pointer;
   .icon_money {
     width: 40px;
     height: 40px;
@@ -210,17 +217,6 @@ header nav {
     margin-left: 0.125em;
   }
 }
-.logo img {
-  width: 200px;
-  opacity: 0;
-}
-.logo img {
-  transform: translate(0);
-  opacity: 1;
-}
-.logo img {
-  transition-delay: 0.3s;
-}
 
 @media (min-width: 25.0625em) {
   .logo a:after {
@@ -245,6 +241,14 @@ header nav {
     height: 60px;
   }
 }
+.header-logo {
+  width: 50%;
+  height: auto;
+}
+.logoHigh {
+  width: 80%;
+  height: auto;
+}
 .header .wrap {
   display: flex;
   justify-content: space-between;
@@ -253,10 +257,10 @@ header nav {
   height: 80px;
 }
 
-.logo img {
+/* .logo img {
   width: 50%;
   height: auto;
-}
+} */
 .menu {
   display: flex;
   justify-content: center;

@@ -90,9 +90,10 @@ export default {
       z-index: 2;
       width: 32%;
       height: 90px;
-      font-size: 32px;
+      font-size: 36px;
+      font-weight: bolder;
       border-radius: 30px 30px 0px 0px;
-      line-height: 80px;
+      line-height: 90px;
 
       text-align: center;
     }

@@ -275,7 +275,7 @@ export default {
           color: #ff6666;
         }
         p {
-          font-size: 24px;
+          font-size: 20px;
           line-height: 28px;
           letter-spacing: 5px;
           font-weight: 600;

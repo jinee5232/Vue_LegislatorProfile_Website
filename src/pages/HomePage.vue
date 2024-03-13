@@ -164,7 +164,7 @@ img:hover {
   font-size: 1.25rem;
   letter-spacing: 0.3rem;
   line-height: 2.5rem;
-  font-weight: 500;
+  font-weight: 600;
   text-align: justify;
 }
 .meowMark {
@@ -180,7 +180,7 @@ img:hover {
 }
 .about-content {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 32px;
   letter-spacing: 8px;
 }

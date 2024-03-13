@@ -72,11 +72,11 @@ export default {
 .btn-close {
   width: 25px;
   height: auto;
-  position: sticky;
+  position: absolute;
   border: none;
   color: #525252;
-  top: 10px;
-  left: 1100px;
+  top: 30px;
+  right: 30px;
   z-index: 100;
   cursor: pointer;
 }

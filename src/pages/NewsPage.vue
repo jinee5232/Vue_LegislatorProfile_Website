@@ -149,7 +149,7 @@ export default {
       box-sizing: border-box;
       height: 500px;
       width: calc(100% - 500px);
-      padding: 5%;
+      padding: 2% 5%;
       text-align: left;
       position: relative;
       .actTitle {
@@ -180,19 +180,21 @@ export default {
         font-size: 36px;
         margin-bottom: 32px;
         font-weight: bolder;
+        line-height: 48px;
         color: #ff6666;
         position: relative;
         &::before {
           position: absolute;
           bottom: -15px;
           width: 100%;
+
           content: "";
           height: 2px;
           background-color: #b9b9b9;
         }
       }
       p {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 28px;
         letter-spacing: 5px;
         font-weight: 600;
