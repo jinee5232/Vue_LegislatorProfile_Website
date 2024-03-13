@@ -8,13 +8,26 @@
       <img v-show="ImgId === 5" :src="Act05" alt="" />
       <img v-show="ImgId === 6" :src="Act06" alt="" />
     </div>
+    <p class="Act_page2">{{ ImgId }}/6</p>
+    <img
+      v-show="ScrollImg === true"
+      class="Act_scroll"
+      :src="ScrollDown"
+      alt=""
+    />
+    <img
+      v-show="ScrollImg === false"
+      class="Act_scroll"
+      :src="ScrollUp"
+      alt=""
+    />
     <swiper
       :direction="'vertical'"
       :slidesPerView="1"
       @slideChange="onSlideChange"
       :mousewheel="true"
       :pagination="{
-        clickable: true,
+        clickable: false,
       }"
       :modules="modules"
       class="mySwiper2"
@@ -27,7 +40,6 @@
           <div class="Act_content2">
             <h2>{{ todo.title }}</h2>
             <p>{{ todo.article }}</p>
-            <p class="Act_page2">&lt;{{ todo.id }}/6 &gt;</p>
           </div>
         </div>
       </swiper-slide>
@@ -43,6 +55,8 @@ import "swiper/css/pagination";
 // import required modules
 import { Mousewheel, Pagination } from "swiper/modules";
 
+import ScrollDown from "../assets/images/03_activity/scroll.png";
+import ScrollUp from "../assets/images/03_activity/scrollup.png";
 import Act01 from "../assets/images/03_activity/activity01.jpeg";
 import Act02 from "../assets/images/03_activity/activity02.jpeg";
 import Act03 from "../assets/images/03_activity/activity03.jpeg";
@@ -52,12 +66,15 @@ import Act06 from "../assets/images/03_activity/activity06.jpg";
 export default {
   data() {
     return {
+      ScrollImg: true,
       Act01,
       Act02,
       Act03,
       Act04,
       Act05,
       Act06,
+      ScrollDown,
+      ScrollUp,
       ImgId: 1,
       carouselData: [
         {
@@ -113,6 +130,11 @@ export default {
     onSlideChange(swiper) {
       console.log(swiper.activeIndex);
       this.ImgId = swiper.activeIndex + 1;
+      if (swiper.activeIndex === 5) {
+        this.ScrollImg = false;
+      } else if (swiper.activeIndex === 0) {
+        this.ScrollImg = true;
+      }
       console.log("照片:" + this.ImgId);
     },
   },
@@ -125,7 +147,7 @@ export default {
 
     return {
       //   onSlideChange,
-      modules: [Mousewheel, Pagination],
+      modules: [Mousewheel],
     };
   },
 };
@@ -140,9 +162,29 @@ export default {
   display: flex;
   justify-content: end;
   position: relative;
+  .Act_page2 {
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+    z-index: 5;
+    font-size: 24px;
+    color: #ff6666;
+  }
+  .Act_scroll {
+    position: absolute;
+    right: 0%;
+    bottom: 25%;
+    z-index: 5;
+    animation-name: scrollMove;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
   .Activy_Img {
     width: 500px;
     height: 500px;
+
     background-color: aliceblue;
     position: absolute;
     left: 0;
@@ -150,14 +192,16 @@ export default {
     z-index: 5;
     overflow: hidden;
     box-shadow:
-      rgba(240, 46, 170, 0.4) 5px 5px,
-      rgba(240, 46, 170, 0.3) 10px 10px,
-      rgba(240, 46, 170, 0.2) 15px 15px,
-      rgba(240, 46, 170, 0.1) 20px 20px,
-      rgba(240, 46, 170, 0.05) 25px 25px;
+      rgba(46, 65, 240, 0.4) 5px 5px,
+      rgba(46, 65, 240, 0.3) 10px 10px,
+      rgba(46, 65, 240, 0.2) 15px 15px,
+      rgba(46, 65, 240, 0.1) 20px 20px,
+      rgba(46, 65, 240, 0.05) 25px 25px;
     img {
       width: 500px;
       height: 500px;
+      object-fit: cover;
+
       &:hover {
         transform: scale(1.1);
         transition: transform 0.5s ease;
@@ -228,7 +272,7 @@ export default {
           font-size: 36px;
           margin-bottom: 32px;
           font-weight: bolder;
-          color: #307cae;
+          color: #ff6666;
         }
         p {
           font-size: 24px;
@@ -236,14 +280,16 @@ export default {
           letter-spacing: 5px;
           font-weight: 600;
         }
-        .Act_page2 {
-          position: absolute;
-          font-size: 32px;
-          right: 25px;
-          bottom: 25px;
-        }
       }
     }
+  }
+}
+@keyframes scrollMove {
+  0% {
+    bottom: 25%;
+  }
+  100% {
+    bottom: 20%;
   }
 }
 </style>
