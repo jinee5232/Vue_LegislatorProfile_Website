@@ -21,6 +21,13 @@
             v-bind:style="{ 'animation-delay': index * 1000 + 'ms' }"
           />
         </div>
+        <div class="BannerWord">
+          <div class="BannerTitle">
+            <h1 class="firstT">喵的未來，</h1>
+            <h1 class="secondT">薩卡來守護</h1>
+          </div>
+          <p>你的一票，為台灣展開新的篇章</p>
+        </div>
       </div>
     </div>
 
@@ -151,6 +158,37 @@ export default {
   justify-content: center;
   align-items: center;
   margin: 90px auto 0 auto;
+  .BannerWord {
+    position: absolute;
+    right: 15%;
+    z-index: 20;
+    top: 35%;
+    .BannerTitle {
+      font-size: 48px;
+      display: flex;
+      margin-bottom: 15px;
+      font-weight: bolder;
+      color: aliceblue;
+      .firstT {
+        opacity: 0;
+        animation: opacityCH 1s ease forwards;
+        animation-delay: 5s;
+      }
+      .secondT {
+        opacity: 0;
+        animation: opacityCH 1s ease forwards;
+        animation-delay: 6s;
+      }
+    }
+    p {
+      font-size: 24px;
+      opacity: 0;
+      font-weight: bold;
+      color: #f4e869;
+      animation: opacityCH 1s ease forwards;
+      animation-delay: 7s;
+    }
+  }
   .img_banner {
     position: absolute;
     width: 100%;
@@ -245,8 +283,16 @@ export default {
     opacity: 0;
   }
   100% {
-    transform: scale(1);
+    transform: scale(0.8);
     opacity: 0.3;
+  }
+}
+@keyframes opacityCH {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>
