@@ -8,7 +8,8 @@
           @click="changeContent(1)"
           :class="[selectedContent.id === 1 ? 'btn_BGC ' : 'btn_BG']"
         >
-          我的主張
+          <h2 class="TitleOne">我的</h2>
+          <h2>主張</h2>
         </div>
         <div
           class="Dbtn"
@@ -16,7 +17,8 @@
           @click="changeContent(2)"
           :class="[selectedContent.id === 2 ? 'btn_BGC ' : 'btn_BG']"
         >
-          經歷背景
+          <h2>經歷</h2>
+          <h2 class="TitleOne">背景</h2>
         </div>
         <div
           class="Dbtn"
@@ -24,7 +26,8 @@
           @click="changeContent(3)"
           :class="[selectedContent.id === 3 ? 'btn_BGC ' : 'btn_BG']"
         >
-          薩卡的起源
+          <h2 class="TitleOne">薩卡的</h2>
+          <h2>起源</h2>
         </div>
         <div class="dialog_info">
           <div class="img_position">
@@ -89,12 +92,9 @@ export default {
     .Dbtn {
       z-index: 2;
       width: 32%;
-      height: 90px;
-      font-size: 36px;
+      display: flex;
+      justify-content: center;
       font-weight: bolder;
-      border-radius: 30px 30px 0px 0px;
-      line-height: 90px;
-
       text-align: center;
     }
   }
@@ -132,30 +132,68 @@ export default {
       right: 0;
       top: 50px;
     }
-    .Info_cont {
-      left: 0;
-      top: 0;
-    }
   }
 }
 @media screen and (min-width: 1200px) {
   .dialog_article {
     height: 650px;
   }
+  .Dbtn {
+    height: 90px;
+    border-radius: 30px 30px 0px 0px;
+    line-height: 90px;
+  }
+  .Info_cont {
+    left: 0;
+    top: 0;
+  }
 }
 @media (max-width: 1200px) {
   .dialog_article {
     height: 650px;
+  }
+  .Dbtn {
+    height: 90px;
+    border-radius: 30px 30px 0px 0px;
+    line-height: 90px;
+  }
+  .Info_cont {
+    left: 0;
+    top: 0;
   }
 }
 @media (min-width: 769px) and (max-width: 992px) {
   .dialog_article {
     height: 550px;
   }
+
+  .Dbtn {
+    height: 60px;
+    line-height: 60px;
+    border-radius: 20px 20px 0px 0px;
+  }
+  .Info_cont {
+    left: 0;
+    top: 20px;
+    transform: scale(0.8);
+  }
 }
 @media (max-width: 768px) {
   .dialog_article {
     height: 450px;
+  }
+  .TitleOne {
+    display: none;
+  }
+  .Dbtn {
+    height: 60px;
+    line-height: 60px;
+    border-radius: 20px 20px 0px 0px;
+  }
+  .Info_cont {
+    left: 0;
+    top: 20px;
+    transform: scale(0.8);
   }
 }
 </style>

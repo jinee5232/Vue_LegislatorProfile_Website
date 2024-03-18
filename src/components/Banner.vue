@@ -209,11 +209,12 @@ export default {
   }
   .BannerWord {
     .BannerTitle {
+      flex-direction: column;
       font-size: 24px;
       margin-bottom: 10px;
     }
     p {
-      font-size: 12px;
+      display: none;
     }
   }
   .img_banner {

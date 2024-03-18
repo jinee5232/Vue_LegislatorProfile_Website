@@ -258,7 +258,6 @@ export default {
           content: "";
         }
         h2 {
-          font-size: 36px;
           margin-bottom: 32px;
           font-weight: bolder;
           color: #ff6666;
@@ -347,23 +346,29 @@ export default {
 }
 @media (max-width: 768px) {
   .Activy_Img {
-    width: 200px;
-    height: 200px;
-    left: 50%;
-    top: 55%;
-    img {
-      width: 200px;
-      height: 200px;
-    }
+    display: none;
   }
   .Act_img2 {
     height: 500px;
-    width: 100px;
-    min-width: 100px;
+    width: 50px;
+    min-width: 50px;
   }
   .mySwiper2 {
     width: 90vw;
-    max-width: 1440px - 100px;
+    max-width: 1440px - 50px;
+  }
+  .Act_scroll {
+    left: 10%;
+    bottom: 5%;
+    transform: scale(0.5);
+  }
+  @keyframes scrollMove {
+    0% {
+      bottom: 5%;
+    }
+    100% {
+      bottom: 0%;
+    }
   }
 }
 </style>

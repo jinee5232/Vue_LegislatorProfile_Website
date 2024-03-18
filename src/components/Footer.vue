@@ -211,30 +211,17 @@ hr {
   }
 }
 @media (max-width: 768px) {
-  .footer {
-    flex-direction: row;
-  }
-  .footer img {
-    width: 100px;
-  }
-  .footer-a {
+  .footer,
+  hr {
     display: none;
-  }
-  .footer-b {
-    width: 60%;
-    padding: 0px;
-    .b-content {
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-    p {
-      font-size: 16px;
-      margin: 5px 5px 10px;
-    }
   }
   .copyright {
     margin: 0px auto;
     font-size: 14px;
+  }
+  .footer-container {
+    height: 50px;
+    line-height: 50px;
   }
 }
 </style>

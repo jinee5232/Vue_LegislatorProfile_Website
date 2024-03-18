@@ -9,9 +9,11 @@
       <div class="carouselAct">
         <div class="Act_content">
           <div class="actTitle">
-            <div class="Tsize circle01">政</div>
-            <div class="Tsize circle01">策</div>
-            <div class="Tsize circle02">{{ todo.number }}</div>
+            <div class="Tsize circle01"><h2>政</h2></div>
+            <div class="Tsize circle01"><h2>策</h2></div>
+            <div class="Tsize circle02">
+              <h2>{{ todo.number }}</h2>
+            </div>
           </div>
           <h2>{{ todo.title }}</h2>
           <p>{{ todo.article[0] }}</p>
@@ -163,7 +165,6 @@ export default {
           line-height: 50px;
           text-align: center;
           border: 5px solid #f4e869;
-          font-size: 32px;
           color: #ff6666;
           margin-right: 5px;
         }
@@ -176,7 +177,6 @@ export default {
       }
 
       h2 {
-        font-size: 36px;
         margin-bottom: 32px;
         font-weight: bolder;
         line-height: 48px;
@@ -186,7 +186,6 @@ export default {
           position: absolute;
           bottom: -15px;
           width: 100%;
-
           content: "";
           height: 2px;
           background-color: #b9b9b9;
@@ -244,7 +243,7 @@ export default {
     }
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .Act_img {
     display: none;
   }

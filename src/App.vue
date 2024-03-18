@@ -16,7 +16,6 @@
     <div class="form-background" @click="closeSpon"></div>
     <Sponsor />
   </div>
-  <div>{{ openspon }}</div>
 </template>
 
 <script>
@@ -67,7 +66,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 @media (max-width: 64em) {
   header {
     height: 60px;
@@ -103,5 +102,55 @@ main {
 .noscroll {
   pointer-events: none;
   overflow-y: hidden;
+}
+@media screen and (min-width: 1200px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 1200px) {
+  .plane_sm {
+    display: none;
+  }
+  .plane {
+    display: block;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .plane {
+    display: none;
+  }
+  .plane_sm {
+    display: block;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .plane {
+    display: none;
+  }
+  .plane_sm {
+    display: block;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
 }
 </style>
