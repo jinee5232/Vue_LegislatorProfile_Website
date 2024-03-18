@@ -138,4 +138,24 @@ export default {
     }
   }
 }
+@media screen and (min-width: 1200px) {
+  .dialog_article {
+    height: 650px;
+  }
+}
+@media (max-width: 1200px) {
+  .dialog_article {
+    height: 650px;
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .dialog_article {
+    height: 550px;
+  }
+}
+@media (max-width: 768px) {
+  .dialog_article {
+    height: 450px;
+  }
+}
 </style>

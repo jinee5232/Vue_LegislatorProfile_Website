@@ -7,20 +7,22 @@
 
       <div class="footer-a">
         <div class="section-b">
-          <a>最新活動</a>
-          <a>議題政策</a>
-          <br />
-          <a href="#">民眾服務</a>
-          <a href="#">小額捐款</a>
+          <div>
+            <a>最新活動</a>
+            <a>議題政策</a>
+          </div>
+          <div>
+            <a>民眾服務</a>
+            <a>小額捐款</a>
+          </div>
         </div>
       </div>
 
       <div class="footer-b">
         <div class="b-content">
           <p>喵星區，毛茸茸大道88號，喵喵大樓3樓</p>
-          <br />
-          <a href="tel:+88628885678">(02) 888-5678</a><br />
-          <a href="mailto:meowoffice@linmeow.com">meowoffice@linmeow.com</a>
+          <p href="tel:+88628885678">(02) 888-5678</p>
+          <p href="mailto:meowoffice@linmeow.com">meowoffice@linmeow.com</p>
         </div>
       </div>
     </div>
@@ -36,13 +38,15 @@ export default {};
 <style scoped>
 .footer-container {
   background-color: #ffeadd;
+  padding: 10px;
 }
 
 .footer {
   display: flex;
-  height: 150px;
+  width: 100%;
+  height: auto;
   background-color: #ffeadd;
-  padding: 25px;
+
   align-items: center;
   justify-content: center;
   max-width: 80%;
@@ -58,37 +62,36 @@ export default {};
 
 .footer-a {
   display: flex;
-  width: 40%;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: start;
+  text-align: center;
   flex-direction: column;
-  margin: 20px;
+
   color: #484848;
 }
 
 .footer-b {
   display: flex;
-  width: 40%;
+
+  flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
-  margin: 20px;
+
   color: #484848;
 }
 
 .b-content {
-  margin: 30px 20px;
-  align-items: flex-start;
+  display: flex;
 }
 
 .section-a {
   justify-content: center;
-  margin: 25px 10px;
+  margin: auto;
   font-size: 30px;
   font-weight: bold;
 }
 
 .section-b a {
-  display: inline-block;
   align-content: flex-start;
   font-size: 20px;
   font-weight: bold;
@@ -100,7 +103,6 @@ export default {};
   display: inline;
   font-size: 20px;
   font-weight: bold;
-  margin: 20px 5px 10px;
   color: #484848;
 }
 
@@ -127,6 +129,112 @@ hr {
   display: inline-block;
   font-size: 18px;
   align-items: center;
-  margin: 15px auto;
+}
+@media screen and (min-width: 1200px) {
+  .footer-a {
+    width: 40%;
+    margin: 20px;
+  }
+  .section-b a {
+    line-height: 50px;
+  }
+  .footer-b {
+    width: 40%;
+    margin: 20px;
+    .b-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  .copyright {
+    margin: 15px auto;
+  }
+}
+@media (max-width: 1200px) {
+  .footer img {
+    width: 200px;
+  }
+  .section-b a {
+    display: inline-block;
+  }
+  .footer-a {
+    width: 40%;
+    margin: 20px;
+    justify-content: center;
+    .section-b a {
+      line-height: 50px;
+    }
+  }
+  .footer-b {
+    width: 40%;
+    .b-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  .copyright {
+    margin: 15px auto;
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 25px;
+  }
+  .footer img {
+    width: 200px;
+  }
+
+  .footer-a {
+    width: 50%;
+    margin: 0px;
+    .section-b {
+      display: flex;
+      justify-content: center;
+      line-height: 20px;
+      a {
+        line-height: 20px;
+      }
+    }
+  }
+  .footer-b {
+    width: 100%;
+    margin: 0px;
+    .b-content {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  .copyright {
+    margin: 10px auto;
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: row;
+  }
+  .footer img {
+    width: 100px;
+  }
+  .footer-a {
+    display: none;
+  }
+  .footer-b {
+    width: 60%;
+    padding: 0px;
+    .b-content {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    p {
+      font-size: 16px;
+      margin: 5px 5px 10px;
+    }
+  }
+  .copyright {
+    margin: 0px auto;
+    font-size: 14px;
+  }
 }
 </style>

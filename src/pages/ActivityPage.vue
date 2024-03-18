@@ -182,13 +182,9 @@ export default {
   }
 
   .Activy_Img {
-    width: 500px;
-    height: 500px;
-
     background-color: aliceblue;
     position: absolute;
-    left: 0;
-    top: -50px;
+
     z-index: 5;
     overflow: hidden;
     box-shadow:
@@ -198,8 +194,6 @@ export default {
       rgba(46, 65, 240, 0.1) 20px 20px,
       rgba(46, 65, 240, 0.05) 25px 25px;
     img {
-      width: 500px;
-      height: 500px;
       object-fit: cover;
 
       &:hover {
@@ -210,8 +204,6 @@ export default {
   }
   .mySwiper2 {
     height: 500px;
-    width: calc(90vw - 100px);
-    max-width: calc(1440px - 100px);
     position: absolute;
     right: 0;
     .swiper-slide {
@@ -231,15 +223,12 @@ export default {
       width: 100%;
 
       .Act_img2 {
-        height: 500px;
-        width: 500px;
-        min-width: 500px;
         background-color: white;
         position: relative;
         img {
           object-fit: cover;
-          height: 500px;
           width: 500px;
+          height: 500px;
         }
         &::before {
           position: absolute;
@@ -290,6 +279,91 @@ export default {
   }
   100% {
     bottom: 20%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .Activy_Img {
+    width: 500px;
+    height: 500px;
+    left: 0;
+    top: -50px;
+    img {
+      width: 500px;
+      height: 500px;
+    }
+  }
+  .Act_img2 {
+    min-width: 500px;
+    height: 500px;
+    width: 500px;
+  }
+  .mySwiper2 {
+    width: calc(90vw - 100px);
+    max-width: calc(1440px - 100px);
+  }
+}
+@media (max-width: 1200px) {
+  .Activy_Img {
+    width: 400px;
+    height: 400px;
+    left: 0;
+    top: -50px;
+
+    img {
+      width: 400px;
+      height: 400px;
+    }
+  }
+  .Act_img2 {
+    height: 500px;
+    width: 400px;
+    min-width: 400px;
+  }
+  .mySwiper2 {
+    width: calc(90vw - 100px);
+    max-width: calc(1440px - 100px);
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .Activy_Img {
+    width: 300px;
+    height: 300px;
+    left: 0;
+    top: -50px;
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  }
+  .Act_img2 {
+    height: 500px;
+    width: 300px;
+    min-width: 300px;
+  }
+  .mySwiper2 {
+    width: calc(90vw - 100px);
+    max-width: calc(1440px - 100px);
+  }
+}
+@media (max-width: 768px) {
+  .Activy_Img {
+    width: 200px;
+    height: 200px;
+    left: 50%;
+    top: 55%;
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  .Act_img2 {
+    height: 500px;
+    width: 100px;
+    min-width: 100px;
+  }
+  .mySwiper2 {
+    width: 90vw;
+    max-width: 1440px - 100px;
   }
 }
 </style>

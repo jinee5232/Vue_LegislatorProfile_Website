@@ -66,6 +66,14 @@
           @click="formTrue"
           alt=""
         />
+        <img
+          class="plane_sm"
+          :src="currentImg"
+          @mouseover="hoverImage"
+          @mouseout="resetImage"
+          @click="formTrue"
+          alt=""
+        />
 
         <svg id="svg_path" viewBox="0 0 1372 850" pres>
           <path
@@ -161,14 +169,10 @@ img:hover {
   /* background-color: #307CAE; */
 }
 #dC_left > p {
-  font-size: 1.25rem;
-  letter-spacing: 0.3rem;
-  line-height: 2.5rem;
   font-weight: 600;
   text-align: justify;
 }
 .meowMark {
-  font-size: 1.5rem;
   color: #d37272;
   font-weight: 600;
 }
@@ -179,16 +183,13 @@ img:hover {
   background-color: #ffeadd;
 }
 .about-content {
-  font-size: 20px;
   font-weight: 600;
-  line-height: 32px;
-  letter-spacing: 8px;
 }
 .about-h2 {
   color: #ff6666;
-  font-size: 28px;
+
   font-weight: 600;
-  line-height: 48px;
+
   letter-spacing: 0.1em;
   display: block;
   margin: 20px 0 0 0;
@@ -358,6 +359,11 @@ img:hover {
   z-index: 2;
   cursor: pointer;
 }
+.plane_sm {
+  position: absolute;
+  right: 0px;
+  bottom: -90px;
+}
 
 .plane-fly {
   cursor: pointer;
@@ -366,7 +372,9 @@ img:hover {
   );
   animation: motion-move 3s ease-in-out 0s 1 alternate forwards;
 }
-
+.plane_sm:hover {
+  transform: scale(1.2);
+}
 .plane:hover {
   transform: scale(1.2);
 }
@@ -391,5 +399,56 @@ img:hover {
   left: 0;
   top: 0;
   z-index: 10;
+}
+.about-content {
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 8px;
+}
+.about-h2 {
+  font-size: 28px;
+  line-height: 48px;
+  letter-spacing: 0.1em;
+  margin: 20px 0 0 0;
+}
+#dC_left > p {
+  font-size: 1.25rem;
+  letter-spacing: 0.3rem;
+  line-height: 2.5rem;
+}
+.meowMark {
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 1200px) {
+  .plane_sm {
+    display: none;
+  }
+  .plane {
+    display: block;
+  }
+}
+@media (max-width: 1200px) {
+  .plane_sm {
+    display: none;
+  }
+  .plane {
+    display: block;
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .plane {
+    display: none;
+  }
+  .plane_sm {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .plane {
+    display: none;
+  }
+  .plane_sm {
+    display: block;
+  }
 }
 </style>

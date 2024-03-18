@@ -68,8 +68,15 @@ export default {
 </script>
 
 <style scoped>
+@media (max-width: 64em) {
+  header {
+    height: 60px;
+    width: 100vw;
+  }
+}
 header {
   height: 80px;
+  width: 100vw;
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
 }
 main {

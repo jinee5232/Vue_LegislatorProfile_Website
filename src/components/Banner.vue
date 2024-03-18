@@ -1,5 +1,5 @@
 <template lang="">
-  <div>
+  <div style="display: block">
     <div style="background-color: #fcb1c9">
       <div class="banner">
         <div id="Bner7">
@@ -94,9 +94,140 @@ export default {
 };
 </script>
 <style scoped>
+@media screen and (min-width: 1200px) {
+  .banner {
+    width: 90vw;
+    margin: 90px auto 0 auto;
+  }
+  #Bner7 {
+    width: 90vw;
+  }
+  .BannerWord {
+    .BannerTitle {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 24px;
+    }
+  }
+  .marquee-container {
+    font-size: 30px;
+    margin-bottom: 50px;
+    height: 60px;
+    line-height: 60px;
+  }
+  .img_banner {
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .banner {
+    width: 90vw;
+    margin: 90px auto 0 auto;
+  }
+  #Bner7 {
+    width: 90vw;
+  }
+  .BannerWord {
+    .BannerTitle {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+  .marquee-container {
+    font-size: 30px;
+    margin-bottom: 50px;
+    height: 60px;
+    line-height: 60px;
+  }
+  .img_banner {
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .banner {
+    width: 100vw;
+    margin: 40px auto 0 auto;
+  }
+  #Bner7 {
+    width: 100vw;
+  }
+  .marquee-container {
+    font-size: 24px;
+    margin-bottom: 30px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .BannerWord {
+    .BannerTitle {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+  .img_banner {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .banner {
+    width: 100vw;
+    margin: 40px auto 0 auto;
+  }
+  #Bner7 {
+    width: 100vw;
+  }
+  .marquee-container {
+    font-size: 24px;
+    margin-bottom: 30px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .BannerWord {
+    .BannerTitle {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+  .img_banner {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
 #Bner7 {
   max-width: 1440px;
-  width: 90vw;
   font-size: 0px;
   display: block;
   padding: 0 auto;
@@ -118,8 +249,8 @@ export default {
   top: 45%;
   left: 72%;
   img {
-    width: 194px;
-    height: 198px;
+    width: 15vw;
+    height: auto;
     opacity: 0;
     transform: scale(5);
   }
@@ -149,7 +280,6 @@ export default {
   }
 }
 .banner {
-  width: 90vw;
   max-width: 1440px;
   /* background-image: url("../assets/images/Banner/banner_02_noShadow_6.png"); */
   padding: 0;
@@ -157,16 +287,14 @@ export default {
   position: relative;
   justify-content: center;
   align-items: center;
-  margin: 90px auto 0 auto;
+
   .BannerWord {
     position: absolute;
     right: 15%;
     z-index: 20;
     top: 35%;
     .BannerTitle {
-      font-size: 48px;
       display: flex;
-      margin-bottom: 15px;
       font-weight: bolder;
       color: aliceblue;
       .firstT {
@@ -181,7 +309,6 @@ export default {
       }
     }
     p {
-      font-size: 24px;
       opacity: 0;
       font-weight: bold;
       color: #f4e869;
@@ -192,7 +319,7 @@ export default {
   .img_banner {
     position: absolute;
     width: 100%;
-    height: 600px;
+    height: 600;
     font-size: 0px;
     display: block;
     padding: 0 auto;
@@ -208,12 +335,9 @@ export default {
 }
 .marquee-container {
   width: 100%;
+  height: auto;
   display: flex;
-  font-size: 30px;
-  margin-bottom: 50px;
   font-weight: bold;
-  height: 60px;
-  line-height: 60px;
   color: #d37272;
   border-top: 3px solid #d37272;
   border-bottom: 3px solid #d37272;

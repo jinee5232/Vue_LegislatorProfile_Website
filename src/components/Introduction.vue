@@ -53,7 +53,7 @@ export default {
 <style scoped>
 .Intro_div {
   width: 100%;
-  height: 550px;
+
   display: flex;
   border-radius: 0px 0px 30px 30px;
   overflow: hidden;
@@ -63,13 +63,10 @@ export default {
     box-sizing: border-box;
     max-width: fill-available;
     overflow: auto;
-
-    width: 50%;
     height: 100%;
     background-color: white;
     display: flex;
     justify-content: center;
-
     margin: 0;
     img {
       object-fit: contain;
@@ -85,6 +82,67 @@ export default {
   }
   .Intro_Content {
     padding: 5%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Intro_div {
+    height: 550px;
+    .Intro_Img,
+    .Intro_Content {
+      width: 50%;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .Intro_div {
+    height: 550px;
+    .Intro_Img {
+      width: 40%;
+    }
+    .Intro_Content {
+      width: 60%;
+    }
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .Intro_div {
+    position: relative;
+    height: 450px;
+    .Intro_Img {
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      img {
+        opacity: 0.5;
+      }
+    }
+    .Intro_Content {
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+}
+@media (max-width: 768px) {
+  .Intro_div {
+    position: relative;
+    height: 350px;
+    .Intro_Img {
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      img {
+        opacity: 0.5;
+      }
+    }
+    .Intro_Content {
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0);
+    }
   }
 }
 </style>

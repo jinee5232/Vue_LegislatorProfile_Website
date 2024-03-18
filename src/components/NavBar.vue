@@ -1,8 +1,8 @@
 <template>
   <!-- :class="[scrollPosition >= 120 ? 'shrink' : 'isTop']" -->
-  <div class="header" :class="[scrollPosition >= 120 ? 'shrink' : 'isTop']">
-    <div class="wrap">
-      <div class="logo">
+  <v-app>
+    <div class="header" :class="[scrollPosition >= 120 ? 'shrink' : 'isTop']">
+      <div class="wrap">
         <router-link to="/Vue_LegislatorProfile_Website/">
           <img
             class="meow-logo"
@@ -11,23 +11,25 @@
             :class="[scrollPosition >= 120 ? 'header-logo' : 'logoHigh']"
           />
         </router-link>
-      </div>
-      <nav>
-        <ul class="menu">
-          <li>
-            <router-link to="/Vue_LegislatorProfile_Website/">首頁</router-link>
-          </li>
-          <li @click="scrollToSection('About')"><a>關於薩卡</a></li>
-          <li @click="scrollToSection('Activy')"><a>政治議題</a></li>
-          <li @click="scrollToSection('News')"><a>最新活動</a></li>
-        </ul>
-        <div class="SponerBtn" @click="OpenSponer">
-          <div class="icon_money">$</div>
-          <a>小額捐款</a>
-        </div>
-      </nav>
 
-      <!-- <ul class="socialList">
+        <nav>
+          <ul class="menu">
+            <li>
+              <router-link to="/Vue_LegislatorProfile_Website/"
+                >首頁</router-link
+              >
+            </li>
+            <li @click="scrollToSection('About')"><a>關於薩卡</a></li>
+            <li @click="scrollToSection('Activy')"><a>政治議題</a></li>
+            <li @click="scrollToSection('News')"><a>最新活動</a></li>
+          </ul>
+          <div class="SponerBtn" @click="OpenSponer">
+            <div class="icon_money">$</div>
+            <a class="icon_word">小額捐款</a>
+          </div>
+        </nav>
+
+        <!-- <ul class="socialList">
         <li>
           <a href="#" class="fb" title="Facebook" target="_blank"
             ><i><font-awesome-icon :icon="['fab', 'facebook-f']" /></i
@@ -49,9 +51,10 @@
           ></a>
         </li>
       </ul> -->
-      <button type="button" class="menuOpenBtn"><span></span></button>
+        <button type="button" class="menuOpenBtn"><span></span></button>
+      </div>
     </div>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -110,22 +113,16 @@ footer .goTop svg,
 .pageContainer {
   padding-top: 135px;
 }
-@media (max-width: 64em) {
-  .pageContainer {
-    padding-top: 60px;
-  }
+
+.menuOpenBtn {
+  display: none;
 }
 .wrap {
   max-width: 68.75em;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  height: 100%;
 }
-@media (max-width: 68.75em) {
-  .wrap {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
+
 body a {
   text-decoration: none;
 }
@@ -134,31 +131,20 @@ body a {
   top: 0;
   left: 0;
   z-index: 90;
-  width: 100%;
-  background-color: #fff;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 20px;
+  background-color: #ffffff;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
 }
 .header.isTop {
   box-shadow: 0 0 0 transparent;
 }
-.header.isTop .wrap {
-  height: 135px;
-}
-@media (max-width: 64em) {
-  header.isTop .wrap {
-    height: 60px;
-  }
-}
 
-@media (max-width: 111.25em) {
-  header .wrap {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-header nav {
+.header nav {
   flex-grow: 1;
-  display: flex;
+  padding-right: 20px;
   justify-content: end;
   align-items: center;
 }
@@ -171,10 +157,8 @@ header nav {
   }
 } */
 .SponerBtn {
-  display: flex;
   margin-left: 40px;
   border-radius: 30px;
-  padding: 5px 20px;
   background-color: #e9545d;
   color: #ffffff;
   font-size: 32px;
@@ -202,59 +186,14 @@ header nav {
     }
   }
 }
-@media (max-width: 64em) {
-  .header .socialList {
-    display: none;
-  }
-}
-@media (min-width: 75.0625em) {
-  .header .socialList > li + li {
-    margin-left: 0.9375em;
-  }
-}
-@media (max-width: 75em) {
-  .header .socialList > li + li {
-    margin-left: 0.125em;
-  }
-}
 
-@media (min-width: 25.0625em) {
-  .logo a:after {
-    margin-left: 12px;
-    padding-bottom: 2px;
-    color: #939293;
-  }
-}
-.wrap {
-  max-width: 68.75em;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media (max-width: 68.75em) {
-  .wrap {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-@media (max-width: 64em) {
-  .header.isTop .wrap {
-    height: 60px;
-  }
-}
-.header-logo {
-  width: 50%;
-  height: auto;
-}
-.logoHigh {
-  width: 80%;
-  height: auto;
-}
 .header .wrap {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   max-width: 111.25em;
-  height: 80px;
+  box-sizing: border-box;
 }
 
 /* .logo img {
@@ -265,21 +204,12 @@ header nav {
   display: flex;
   justify-content: center;
 }
-@media (max-width: 64em) {
-  .menu {
-    display: none;
-  }
-}
+
 .menu > li {
   position: relative;
 }
 .menu > li + li {
   padding-left: 50px;
-}
-@media (max-width: 82.5em) {
-  .menu > li + li {
-    padding-left: 20px;
-  }
 }
 
 /* 斜線 */
@@ -296,11 +226,6 @@ header nav {
   transform: rotate(30deg);
 } */
 
-@media (max-width: 82.5em) {
-  .menu > li + li:before {
-    left: 10px;
-  }
-}
 .menu a {
   position: relative;
   display: block;
@@ -355,11 +280,7 @@ header nav {
   cursor: pointer;
   background-color: transparent;
 }
-@media (min-width: 64.0625em) {
-  .menuOpenBtn {
-    display: none;
-  }
-}
+
 .menuOpenBtn.open span {
   width: 0;
 }
@@ -461,5 +382,105 @@ header nav {
 }
 .header.shrink {
   padding: 10px 0;
+}
+.header-logo {
+  padding-left: 20px;
+}
+.logoHigh {
+  padding-left: 20px;
+}
+@media screen and (min-width: 1200px) {
+  .isTop {
+    height: 135px;
+  }
+  .header nav {
+    display: flex;
+  }
+  .SponerBtn {
+    display: flex;
+    padding: 5px 20px;
+  }
+  .header-logo {
+    width: auto;
+    height: 90px; /* 设置logo图片的高度为容器高度的百分比 */
+  }
+  .logoHigh {
+    width: auto;
+    height: 125px; /* 设置logo图片的高度为容器高度的百分比 */
+  }
+}
+@media (max-width: 1200px) {
+  .header nav {
+    display: flex;
+  }
+  .isTop {
+    height: 135px;
+  }
+  .SponerBtn {
+    display: flex;
+    padding: 5px 20px;
+  }
+  .menu > li + li {
+    padding-left: 20px;
+  }
+  .header-logo {
+    width: auto;
+    height: 80px; /* 设置logo图片的高度为容器高度的百分比 */
+  }
+  .logoHigh {
+    width: auto;
+    height: 110px; /* 设置logo图片的高度为容器高度的百分比 */
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .header nav {
+    display: flex;
+  }
+  .isTop,
+  .wrap {
+    height: 80px;
+  }
+  .SponerBtn {
+    display: flex;
+    padding: 5px 10px;
+    a {
+      display: none;
+    }
+  }
+  .menu > li + li {
+    padding-left: 10px;
+  }
+  .menu a {
+    font-size: 28px;
+  }
+  .header-logo {
+    width: auto;
+    height: 60px; /* 设置logo图片的高度为容器高度的百分比 */
+  }
+  .logoHigh {
+    width: auto;
+    height: 80px; /* 设置logo图片的高度为容器高度的百分比 */
+  }
+}
+@media (max-width: 768px) {
+  .header nav {
+    display: none;
+  }
+  .isTop,
+  .wrap {
+    height: 80px;
+  }
+  .header.menuOpenBtn {
+    display: flex;
+  }
+
+  .header-logo {
+    width: auto;
+    height: 60px; /* 设置logo图片的高度为容器高度的百分比 */
+  }
+  .logoHigh {
+    width: auto;
+    height: 80px; /* 设置logo图片的高度为容器高度的百分比 */
+  }
 }
 </style>

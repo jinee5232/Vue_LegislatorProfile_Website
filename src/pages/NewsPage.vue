@@ -126,11 +126,10 @@ export default {
     display: flex;
     width: 100%;
     .Act_img {
-      height: 500px;
-      width: 500px;
       border-radius: 30px;
       overflow: hidden;
       right: 0;
+      margin: auto 0;
       padding: 0;
       img {
         object-fit: cover;
@@ -148,7 +147,7 @@ export default {
     .Act_content {
       box-sizing: border-box;
       height: 500px;
-      width: calc(100% - 500px);
+
       padding: 2% 5%;
       text-align: left;
       position: relative;
@@ -208,6 +207,49 @@ export default {
         bottom: 20px;
       }
     }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .Act_img {
+    height: 450px;
+    width: 450px;
+  }
+  .Act_content {
+    width: calc(100% - 450px);
+  }
+}
+@media (max-width: 1200px) {
+  .Act_img {
+    height: 400px;
+    width: 400px;
+  }
+  .Act_content {
+    width: calc(100% - 400px);
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .carouselAct {
+    position: relative;
+    .Act_img {
+      position: absolute;
+      height: 500px;
+      width: 500px;
+      opacity: 0.1;
+      z-index: 1;
+    }
+    .Act_content {
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .Act_img {
+    display: none;
+  }
+  .Act_content {
+    width: 100%;
   }
 }
 </style>
