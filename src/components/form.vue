@@ -82,6 +82,7 @@ export default {
   height: 80vh;
   border-radius: 15px;
   /* top: 10%; */
+  overflow: hidden;
   overflow-y: scroll;
   padding: 30px;
   z-index: 120;
@@ -220,6 +221,7 @@ export default {
 }
 @media (max-width: 768px) {
   .mailbox-form2 form {
+    width: 100%;
     div {
       display: flex;
       flex-direction: column;
