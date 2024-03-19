@@ -284,6 +284,7 @@ export default {
   max-width: 1440px;
   /* background-image: url("../assets/images/Banner/banner_02_noShadow_6.png"); */
   padding: 0;
+  overflow: hidden;
   display: block;
   position: relative;
   justify-content: center;
