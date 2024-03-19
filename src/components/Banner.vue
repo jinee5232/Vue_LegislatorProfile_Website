@@ -196,7 +196,7 @@ export default {
 @media (max-width: 768px) {
   .banner {
     width: 100vw;
-    margin: 40px auto 0 auto;
+    margin: 10px auto 0 auto;
   }
   #Bner7 {
     width: 100vw;

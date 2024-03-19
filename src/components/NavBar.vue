@@ -468,7 +468,7 @@ body a {
   }
   .isTop,
   .wrap {
-    height: 80px;
+    height: 50px;
   }
   .header.menuOpenBtn {
     display: flex;
@@ -476,11 +476,11 @@ body a {
 
   .header-logo {
     width: auto;
-    height: 60px; /* 设置logo图片的高度为容器高度的百分比 */
+    height: 30px; /* 设置logo图片的高度为容器高度的百分比 */
   }
   .logoHigh {
     width: auto;
-    height: 80px; /* 设置logo图片的高度为容器高度的百分比 */
+    height: 50px; /* 设置logo图片的高度为容器高度的百分比 */
   }
 }
 </style>
