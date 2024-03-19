@@ -244,5 +244,8 @@ export default {
       height: 300px;
     }
   }
+  .form-titleZ {
+    font-size: 32px;
+  }
 }
 </style>
