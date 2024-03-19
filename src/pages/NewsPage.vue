@@ -250,5 +250,12 @@ export default {
   .Act_content {
     width: 100%;
   }
+  .Act_page {
+    position: absolute;
+    font-size: 18px;
+    color: #ff6666;
+    right: 20px;
+    top: 20px;
+  }
 }
 </style>
