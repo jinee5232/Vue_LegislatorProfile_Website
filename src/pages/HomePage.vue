@@ -3,7 +3,7 @@
     <Banner />
   </div>
   <div id="About" :class="{ floor1: true, testenter: floorshow1 }" ref="floor1">
-    <div class="article_title1">
+    <div class="article_title article_title1">
       <transition name="titleAnimation">
         <h2
           if="floorshow1"
@@ -20,7 +20,7 @@
 
   <div class="bgwhite" id="Activy">
     <div :class="{ floor1: true, testenter: floorshow2 }" ref="floor2">
-      <div class="article_title2">
+      <div class="article_title article_title2">
         <transition name="titleAnimation2">
           <h2 class="hp-h2" :class="{ 'animate-title': floorshow2 }">
             政治議題
@@ -33,7 +33,7 @@
   </div>
 
   <div :class="{ floor2: true, testenter: floorshow3 }" ref="floor3" id="News">
-    <div class="article_title1">
+    <div class="article_title article_title1">
       <transition name="titleAnimation3" appear>
         <h2 class="hp-h2" :class="{ 'animate-title': floorshow3 }">最新活動</h2>
       </transition>
@@ -42,7 +42,7 @@
   </div>
   <div class="Planebg">
     <div :class="{ articlediv: true, testenter: floorshow4 }" ref="floor4">
-      <div class="article_title2">
+      <div class="article_title article_title2">
         <transition name="titleAnimation2">
           <h2 class="hp-h2" :class="{ 'animate-title': floorshow4 }">
             服務信箱
@@ -379,11 +379,8 @@ img:hover {
     z-index: 6;
   }
 }
-.article_title2 {
-  position: absolute;
-  z-index: 10;
-}
-.article_title1 {
+
+.article_title {
   position: absolute;
   z-index: 10;
 }
@@ -439,7 +436,7 @@ img:hover {
     top: 0;
   }
 }
-@media (max-width: 1200px) {
+@media (min-width: 993px) and(max-width: 1200px) {
   .plane_sm {
     display: block;
   }
@@ -531,10 +528,12 @@ img:hover {
     font-size: 36px;
   }
   .article_title1 {
+    position: absolute;
     right: 0;
     top: 0;
   }
   .article_title2 {
+    position: absolute;
     left: 0;
     top: 0;
   }
