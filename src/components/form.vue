@@ -5,28 +5,50 @@
       src="../assets/images/01_homepage/exit.png"
       @click="closeform"
     />
+
+    <h2 class="form-titleZ">民眾服務信箱</h2>
     <div class="mailbox-form2">
-      <h2 class="hp-h2">民眾服務信箱</h2>
       <form action="#">
-        <p>您的姓名：</p>
-        <input class="input" type="text" placeholder="  ex. 喵喵喵" />
-
-        <p>您的Email：</p>
-        <input
-          class="input"
-          type="email"
-          placeholder="  ex. meowmeow@meow.com"
-        />
-
-        <p>您的手機：</p>
-        <input class="input" type="tel" placeholder="  ex. 0912-345-678" />
-
-        <p>您的建言：</p>
-        <textarea
-          class="input2"
-          type="text"
-          placeholder=" ex. 我覺得某活動某個地方可以改善..."
-        ></textarea>
+        <div>
+          <label for="name">姓名：</label>
+          <input
+            class="input input1"
+            type="text"
+            placeholder="Ex:喵喵喵"
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='喵喵喵'"
+          />
+        </div>
+        <div>
+          <label for="name">Email：</label>
+          <input
+            class="input input1"
+            type="email"
+            placeholder="Ex:meowmeow@meow.com"
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='Ex:meowmeow@meow.com'"
+          />
+        </div>
+        <div>
+          <label for="phone">手機：</label>
+          <input
+            class="input input1"
+            type="tel"
+            placeholder="Ex:0912-345-678"
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='Ex:0912-345-678'"
+          />
+        </div>
+        <div>
+          <label for="advice">建議：</label>
+          <textarea
+            class="input input2"
+            type="text"
+            placeholder="Ex:我覺得某活動..."
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='Ex:我覺得某活動...'"
+          ></textarea>
+        </div>
 
         <input class="btn-mailbox" type="submit" value="確認送出" />
       </form>
@@ -55,6 +77,7 @@ export default {
 <style scoped>
 .form-style {
   position: relative;
+  text-align: center;
   width: 1360px;
   height: 80vh;
   border-radius: 15px;
@@ -65,6 +88,7 @@ export default {
   margin: auto;
   background-color: #fff;
 }
+
 .form-style::-webkit-scrollbar {
   display: none;
 }
@@ -90,62 +114,81 @@ export default {
   /* position: absolute; */
   position: relative;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  width: 800px;
+  width: 80%;
   margin: 0 auto;
   display: flex;
+  label {
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
 }
 
-.mailbox-form2 .hp-h2 {
+.form-titleZ {
   font-size: 48px;
   font-weight: 600;
+  display: inline-block;
   letter-spacing: 10%;
   color: #307cae;
-  margin: 0;
-  display: block;
-  text-align: center;
+  margin-bottom: 30px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+
+  position: relative;
+  &::before {
+    position: absolute;
+    contain: "";
+    width: 100%;
+    height: 5px;
+    bottom: -5px;
+    background-color: #b3b3b3;
+    transform-origin: center;
+    right: 0;
+    left: 0;
+    content: "";
+  }
 }
 
 .mailbox-form2 .input {
-  width: 600px;
-  height: 67px;
-  background-color: #7bc2e9;
-  opacity: 0.7;
+  width: 100%;
+  background-color: #e7e7e7;
+  opacity: 0.9;
+  padding: 5px 0;
   outline-style: none;
   border: none;
   border-radius: 20px;
   font-size: 24px;
   color: #141414;
-  margin: 25px 0;
+  text-indent: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px inset;
+  /* margin: 25px 0; */
 }
-
-.mailbox-form2 .input::placeholder,
-.mailbox-form2 .input2::placeholder {
-  color: #141414;
+.input1 {
+  height: 67px;
 }
-
-.mailbox-form2 .input2 {
-  width: 600px;
+.input2 {
   height: 328px;
-  background-color: #7bc2e9;
-  opacity: 0.7;
-  outline-style: none;
-  border: none;
-  border-radius: 25px;
-  font-size: 24px;
+}
+.mailbox-form2 .input::placeholder {
   color: #141414;
-  margin: 25px 0;
 }
 
-.mailbox-form2 p {
+.mailbox-form2 label {
   justify-content: center;
   display: inline;
-  width: 150px;
+
   font-size: 24px;
   font-weight: 600;
-  color: #55a8d4;
-  margin: 25px 0;
-  line-height: 69px;
+  color: #505050;
+  line-height: 40px;
 }
 
 .btn-mailbox {
@@ -157,16 +200,47 @@ export default {
   background-color: #ff6666;
   outline-style: none;
   border: none;
-  border-radius: 39px;
-  margin: 0 25px 0 auto;
+  border-radius: 10px;
+  margin-left: auto;
 }
 
 .img-mailbox {
   position: absolute;
   width: 1000px;
-  top: 30%;
-  left: -15%;
+  top: 10%;
+  left: -20%;
   z-index: -1;
   opacity: 0.5;
+}
+@media screen and (min-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media (min-width: 769px) and (max-width: 992px) {
+}
+@media (max-width: 768px) {
+  .mailbox-form2 form {
+    div {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+    label {
+      font-size: 24px;
+      line-height: 30px;
+    }
+    .input {
+      font-size: 16px;
+      font-weight: 600;
+      text-indent: 15px;
+      border-radius: 10px;
+    }
+    .input1 {
+      height: 50px;
+    }
+    .input2 {
+      height: 300px;
+    }
+  }
 }
 </style>
